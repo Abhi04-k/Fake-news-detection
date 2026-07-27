@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result - AI Fake News Detector</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/dashboard.html" class="brand">FakeNewsAI</a>
+        <div class="nav-links">
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/detect.html">Detect News</a>
+            <a href="/history.html">History</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="detect-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h2>Analysis Result</h2>
+                <a href="/detect.html" class="btn" style="width: auto; padding: 0.5rem 1rem; background-color: var(--text-muted);">Check Another</a>
+            </div>
+            
+            <div id="resultCard" class="result-card" style="display: block; margin-top: 0;">
+                <div id="resultTitle" class="result-title">Analyzing...</div>
+                <div id="resultConfidence" class="result-confidence"></div>
+                <div id="resultSource" style="margin-top: 1rem; font-size: 0.875rem; font-weight: 500;"></div>
+            </div>
+
+            <div id="breakdownContainer" style="display: none; margin-top: 2rem; text-align: left;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.125rem;">Sentence Breakdown</h3>
+                <div class="cards-wrapper" style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                    <div style="flex: 1; min-width: 250px; background: #FEF2F2; padding: 1rem; border-radius: 8px; border: 1px solid #FCA5A5;">
+                        <h4 style="color: #991B1B; margin-bottom: 0.75rem; border-bottom: 1px solid #FCA5A5; padding-bottom: 0.5rem;">Fake Claims 🚨</h4>
+                        <div id="fakeBreakdownList" style="display: flex; flex-direction: column; gap: 0.75rem;"></div>
+                    </div>
+                    <div style="flex: 1; min-width: 250px; background: #F0FDF4; padding: 1rem; border-radius: 8px; border: 1px solid #86EFAC;">
+                        <h4 style="color: #166534; margin-bottom: 0.75rem; border-bottom: 1px solid #86EFAC; padding-bottom: 0.5rem;">Real / Verified Claims ✅</h4>
+                        <div id="realBreakdownList" style="display: flex; flex-direction: column; gap: 0.75rem;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderResultPage();
+        });
+    </script>
+</body>
+</html>

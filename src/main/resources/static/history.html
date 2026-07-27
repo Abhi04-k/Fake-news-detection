@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - AI Fake News Detector</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/dashboard.html" class="brand">FakeNewsAI</a>
+        <div class="nav-links">
+            <a href="/dashboard.html">Dashboard</a>
+            <a href="/detect.html">Detect News</a>
+            <a href="/history.html">History</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="history-section" style="background: var(--bg-card); padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-lg);" id="historySection">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                <h2 style="margin: 0;">Your Detection History</h2>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <span id="userName" style="display:none;"></span> <!-- Hidden user name for checkAuth -->
+                    <button onclick="clearAllHistory()" style="background: var(--danger); color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer; font-size: 0.875rem;">Clear All History</button>
+                </div>
+            </div>
+            <div id="historyList" style="display: flex; flex-direction: column; gap: 1rem;">
+                <p style="color: #6B7280;">Loading history...</p>
+            </div>
+        </div>
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+</html>

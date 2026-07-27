@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP - AI Fake News Detector</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="brand">FakeNewsAI</a>
+    </nav>
+
+    <div class="container">
+        <div class="auth-card">
+            <h2>Verify Email</h2>
+            <p style="text-align: center; margin-bottom: 1rem; color: var(--text-muted)">Please enter the 6-digit OTP sent to your email.</p>
+            <div id="msg" class="msg"></div>
+            <form id="verifyForm">
+                <div class="form-group">
+                    <label for="otp">OTP Code</label>
+                    <input type="text" id="otp" class="form-control" required maxlength="6" pattern="\d{6}">
+                </div>
+                <button type="submit" class="btn">Verify Account</button>
+            </form>
+        </div>
+    </div>
+    <script src="/js/app.js"></script>
+</body>
+</html>
